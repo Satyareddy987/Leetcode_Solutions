@@ -1,14 +1,11 @@
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
-        for(int i=0;i<INT_MAX;i++){
-            int x = i;
-            auto it = find(nums.begin(),nums.end(),x);
-            if(it==nums.end()){
-                return x;
-                break;
-            }
+        int sum = 0;
+        for(int i=0;i<nums.size();i++){
+           sum+=nums[i];
         }
-        return 0;
+        int tot = (nums.size()*(nums.size()+1))/2;
+        return tot-sum;;
     }
 };
